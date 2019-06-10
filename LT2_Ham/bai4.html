@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap 2</title>
+</head>
+<body>
+<script>
+    let input = prompt("Nhập vào kí tự ");
+
+    function kiemTraSo() {
+        if (!isNaN(input)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    if (kiemTraSo()) {
+        alert("Là số");
+    } else {
+        alert("Không phải là số");
+    }
+</script>
+</body>
+</html>

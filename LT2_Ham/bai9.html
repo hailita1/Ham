@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap 2</title>
+</head>
+<body>
+<script>
+    let mang_ki_tu = prompt("Nhập vào mảng kí tự ");
+    let ki_tu = prompt('Nhập vào kí tự');
+
+    function kiemTra(a, b) {
+        if (a.indexOf(b) !== -1) {
+            return true;
+        }
+        return false;
+    }
+
+    if (kiemTra(mang_ki_tu, ki_tu)) {
+        alert("Có kí tự trong mảng");
+    } else {
+        alert("Không có kí tự trong mảng");
+    }
+</script>
+</body>
+</html>
