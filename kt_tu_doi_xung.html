@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra tư doi xung</title>
+</head>
+<body>
+<script>
+    let tuCanKiemTra = [];
+    let n = parseInt(prompt("Nhập vào số kí tự của từ: "));
+    document.write("Từ cần kiểm tra: ");
+    for (let i = 0; i < n; i++) {
+        tuCanKiemTra[i] = prompt("Nhập vào kí tự thứ " + (i + 1) + " của từ cần kiểm tra ");
+        document.write(tuCanKiemTra[i]);
+    }
+
+    function kiemTra() {
+        for (i = 0; i < (n / 2); i++) {
+            if (tuCanKiemTra[i] != tuCanKiemTra[n - i - 1]) {
+                return true;
+            }
+        }
+        return false;
+    }
+    if(true) {
+        alert("Từ nhập vào đối xứng ");
+    } else {
+        alert("Từ nhập vào không dối xứng");
+    }
+
+</script>
+</body>
+</html>
