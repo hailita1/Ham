@@ -1,0 +1,76 @@
+<head>
+    <meta charset="UTF-8">
+    <title>Quan_ly_san_pham</title>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+            font-size: 20px;
+        }
+        button{
+            font-size: 20px;
+        }
+        
+    </style>
+</head>
+<body onload="showproducts(products, tbody)">
+<h3>Add New Product</h3>
+<div>
+    <td colspan="3" height="50px"></td>
+    <input type='text' id='textProduct' style="width: 250px; height: 50px"/>
+    <button style="background-color: forestgreen; width: 100px; height: 50px" id='btnadd' value='Add' onclick='addProduct(products,this.parentElement.children[0].value)'>Add</button>
+</div>
+<table cellpadding="10px" cellspacing="0">
+    <br/>
+    <tbody>
+    <tr>
+        <td><h4>Tên sản phẩm</h4></td>
+        <td><h4>Sửa</h4></td>
+        <td><h4>Xóa</h4></td>
+    </tr>
+    </tbody>
+    <tbody id="products">
+
+    </tbody>
+</table>
+<script>
+
+    products = ["sony", "samsung", "apple", "huawei", "vivo"]
+    let tbody = document.getElementById("products");
+
+    function showproducts(listproduct, tbody) {
+        let data = '';
+        for (let i = 0; i < listproduct.length; i++) {
+            data += '<tr>';
+            data += '<td style="font-size: 20px">';
+            data += listproduct[i];
+            data += '</td>';
+            data += '<td><input style="background-color: forestgreen" type="button" value="Edit" onclick="editProduct(products,' + i + ')"></td>';
+            data += '<td><input style="background-color: forestgreen" type="button" value="Delete" onclick="deleteProduct(products,' + i + ')"></td>';
+            data += '</tr>';
+        }
+        tbody.innerHTML = data;
+    }
+
+
+    function addProduct(listproduct, product) {
+        if (product != null) {
+            listproduct.push(product);
+        }
+        showproducts(products, tbody);
+    }
+
+    function editProduct(listproduct, position) {
+        let edit = prompt("Tên sản phẩm: ");
+        listproduct[position] = edit;
+        showproducts(listproduct, tbody);
+    }
+
+    function deleteProduct(listproduct, position) {
+        listproduct.splice(position, 1);
+        showproducts(listproduct, tbody);
+    }
+
+</script>
+</body>
+</html>
